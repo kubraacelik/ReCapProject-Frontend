@@ -1,0 +1,22 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+<table *ngIf="dataLoaded=true" class="table table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rental">
+            <td>rental.</td>
+            <td>rental.</td>
+            <td>rental.</td>
+            <td>rental.</td>
+            <td>rental.</td>
+        </tr>
+    </tbody>
+</table>
