@@ -4,13 +4,11 @@
   <table *ngIf="dataLoaded==true" class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Adı</th>
+            <th scope="col">Renk</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let color of color">
-            <th>{{color.colorId}}</th>
             <th>{{color.colorName}}</th>
         </tr>
     </tbody>

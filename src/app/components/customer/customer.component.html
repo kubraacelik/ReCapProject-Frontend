@@ -4,14 +4,14 @@
   <table *ngIf="dataLoaded==true" class="table table-hover">
     <thead>
         <tr>
-        <th>Id</th>
-        <th>userId</th>
-        <th>companyName</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şirket Adı</th>
 </thead>
 <tbody>
         <tr *ngFor="let customer of customer">
-        <td> {{customer.id}}</td>
-        <td>{{customer.userId}} </td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}} </td>
         <td>{{customer.companyName}} </td>
      
     </tr>

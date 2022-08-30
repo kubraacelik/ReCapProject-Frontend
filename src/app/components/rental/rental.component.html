@@ -1,22 +1,23 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-<table *ngIf="dataLoaded=true" class="table table-hover">
+  <table *ngIf="dataLoaded==true" class="table table-hover">
     <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+      <tr>
+        <th scope="col">Marka Adı</th>
+        <th scope="col">Ad</th>
+        <th scope="col">Soyad</th>
+        <th scope="col">Kiralanan Tarih</th>
+        <th scope="col">Teslim Edilen Tarih</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let rental of rental">
-            <td>rental.</td>
-            <td>rental.</td>
-            <td>rental.</td>
-            <td>rental.</td>
-            <td>rental.</td>
-        </tr>
+      <tr *ngFor="let rental of rental">
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.firstName}}</td>
+        <td>{{rental.lastName}}</td>
+        <td>{{rental.rentDate}}</td>
+        <td>{{rental.returnDate}}</td>
+      </tr>     
     </tbody>
-</table>
+  </table>
