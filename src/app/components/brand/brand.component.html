@@ -1,25 +1,16 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+<br>
+<ul class="list-group">
+    <li class="list-group-item text-center text-white bg-dark" 
+    (click) = "reset()" 
+    [class]="getAllBrandClass()" 
+    routerLink = "/cars">MARKALAR</li>
 
-  <table *ngIf="dataLoaded==true" class="table">
-    <thead>
-        <tr>
-            <th>Marka Adı</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ul class="list-group">
-            <li (click)="resetCurrentBrand()" 
-            routerLink = "" 
-            [class]="getAllBrandClass()">Tüm Markalar</li>
-            <li (click)="setCurrentBrand(brand)" 
-            routerLink = "/cars/brand/{{brand.brandId}}"
-            *ngFor="let brand of brand" 
-            [class]="getCurrentBrandClass(brand)">
-            {{brand.brandName}}</li>
-        </ul>
-    </tbody>
-  </table>
-
-  <h5 *ngIf="currentBrand">{{currentBrand.brandName}} seçtiniz</h5>
+    <li class="list-group-item bg-light" 
+     (click) = "setCurrentBrand(brand)"
+    routerLink = "/cars/brand/{{brand.brandId}}"      
+    *ngFor = "let brand of brands"
+    [class] = "getCurrentBrandClass(brand)"
+    class="form-check-label">
+      {{brand.brandName}}
+    </li>
+  </ul>

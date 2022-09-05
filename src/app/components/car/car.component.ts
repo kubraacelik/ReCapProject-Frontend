@@ -10,8 +10,10 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarComponent implements OnInit {
 
-  car:Car[] = [];
+  cars:Car[] = [];
   dataLoaded=false;
+  // imageUrl = "https://localhost:44381"
+
 
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
 
@@ -27,23 +29,35 @@ export class CarComponent implements OnInit {
   
   getCars(){
     this.carService.getCarDetails().subscribe(response=>{
-      this.car=response.data
+      this.cars=response.data
       this.dataLoaded=true;
     })
   }
 
   getCarsByBrand(brandId:number){
     this.carService.getCarsByBrand(brandId).subscribe(response=>{
-      this.car=response.data
+      this.cars=response.data
       this.dataLoaded=true;
     })
   }
 
   getCarsByColor(colorId:number){
     this.carService.getCarsByColor(colorId).subscribe(response=>{
-      this.car=response.data
+      this.cars=response.data
       this.dataLoaded=true;
     })
   }
+
+  // getCarImage(car:Car){
+  //   if (car.imagePath == null) {
+  //     let path = this.imageUrl + "/images/carDefault.png"
+  //     return path;
+
+  //   }
+  //   else{
+  //     let path = this.imageUrl + car.imagePath;
+  //     return path;
+  //   }
+  // }
 }
 

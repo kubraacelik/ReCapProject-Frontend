@@ -9,30 +9,28 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
 
-  brand:Brand[]=[];
+  brands :Brand[]=[];
   dataLoaded=false;
-  currentBrand? : Brand | null;
+  currentBrand : Brand | null;
   
-
+  
   constructor(private brandService:BrandService) { }
   
-
   ngOnInit(): void {
     this.getBrands();
   }
 
   getBrands(){
-    this.brandService.getbrands().subscribe(response=>{
-      return this.brand=response.data;
-      
+    this.brandService.getBrands().subscribe(response=>{
+      return this.brands=response.data;
+      this.dataLoaded = true;
     })
   }
+
   setCurrentBrand(brand:Brand){
     this.currentBrand = brand;
   }
-  resetCurrentBrand(){
-    this.currentBrand=null;
-  }
+
   getCurrentBrandClass(brand:Brand){
     if(brand==this.currentBrand){
       return "list-group-item active"
@@ -50,4 +48,9 @@ export class BrandComponent implements OnInit {
       return "list-group-item"
     }
   }
+
+  reset(){
+    this.currentBrand = null
+}
+
 }

@@ -9,7 +9,7 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class RentalComponent implements OnInit {
 
-rental:Rental[]=[];
+rentals:Rental[]=[];
 dataLoaded=false;
   
   constructor(private rentalService:RentalService) { }
@@ -20,7 +20,7 @@ dataLoaded=false;
 
   getRentals(){
     this.rentalService.getRentalDetails().subscribe(response=>{
-      this.rental=response.data
+      this.rentals=response.data
       this.dataLoaded=true;
     })
 

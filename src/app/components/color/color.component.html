@@ -1,20 +1,18 @@
-  <table *ngIf="dataLoaded==true" class="table">
-    <thead>
-        <tr>
-            <th>Renk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ul class="list-group">
-            <li [class]="getAllColorClass()" routerLink = "/cars">Tüm Renkler</li>
-            <li (click)="setCurrentColor(color)" 
-            routerLink = "/cars/color/{{color.colorId}}"
-            *ngFor="let color of color"
-            [class]="getCurrentColorClass(color)">
-            {{color.colorName}}</li>
-        </ul>
-    </tbody>
-  </table>
+<br>
+<br>
+<ul class="list-group">
+    <li class="list-group-item text-center text-white bg-dark" 
+    (click) = "reset()"
+    [class]="getAllColorClass()" 
+    routerLink = "/cars">RENKLER</li>
 
-  <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
-
+    <li class="list-group-item bg-light" 
+    (click) = "setCurrentColor(color)"
+    routerLink = "/cars/color/{{color.colorId}}"
+    *ngFor = "let color of colors"
+    [class] = "getCurrentColorClass(color)"
+    class = "form-check-label">
+      {{color.colorName}}
+    </li>
+  </ul>
+  
