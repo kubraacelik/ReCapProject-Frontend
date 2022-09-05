@@ -10,7 +10,9 @@
     </thead>
     <tbody>
         <ul class="list-group">
-            <li [class]="getAllBrandClass()" routerLink = "/cars">Tüm Markalar</li>
+            <li (click)="resetCurrentBrand()" 
+            routerLink = "" 
+            [class]="getAllBrandClass()">Tüm Markalar</li>
             <li (click)="setCurrentBrand(brand)" 
             routerLink = "/cars/brand/{{brand.brandId}}"
             *ngFor="let brand of brand" 

@@ -10,10 +10,12 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
 
   brand:Brand[]=[];
-  currentBrand : Brand;
+  dataLoaded=false;
+  currentBrand? : Brand | null;
+  
 
   constructor(private brandService:BrandService) { }
-  dataLoaded=false;
+  
 
   ngOnInit(): void {
     this.getBrands();
@@ -21,12 +23,15 @@ export class BrandComponent implements OnInit {
 
   getBrands(){
     this.brandService.getbrands().subscribe(response=>{
-      this.brand=response.data
-      this.dataLoaded=true;
+      return this.brand=response.data;
+      
     })
   }
   setCurrentBrand(brand:Brand){
     this.currentBrand = brand;
+  }
+  resetCurrentBrand(){
+    this.currentBrand=null;
   }
   getCurrentBrandClass(brand:Brand){
     if(brand==this.currentBrand){
