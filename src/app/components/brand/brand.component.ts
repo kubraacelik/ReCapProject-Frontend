@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Brand } from 'src/app/models/Brands/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -11,8 +12,7 @@ export class BrandComponent implements OnInit {
 
   brands :Brand[]=[];
   dataLoaded=false;
-  currentBrand : Brand | null;
-  
+  currentBrand:Brand | null;
   
   constructor(private brandService:BrandService) { }
   
@@ -22,7 +22,7 @@ export class BrandComponent implements OnInit {
 
   getBrands(){
     this.brandService.getBrands().subscribe(response=>{
-      return this.brands=response.data;
+      this.brands=response.data;
       this.dataLoaded = true;
     })
   }
@@ -48,7 +48,6 @@ export class BrandComponent implements OnInit {
       return "list-group-item"
     }
   }
-
   reset(){
     this.currentBrand = null
 }
