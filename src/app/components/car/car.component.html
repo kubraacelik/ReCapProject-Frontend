@@ -18,13 +18,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr class ="text-center " *ngFor = "let car of cars">
+      <tr class ="text-center " *ngFor = "let carDetail of carDetails">
         <td><i class="fa-solid fa-car"></i></td>
         <!-- <td>{{car.brandName}}</td>  -->
-        <td>{{car.modelName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.dailyPrice}} ₺</td>
+        <td>{{carDetail.modelName}}</td>
+        <td>{{carDetail.modelYear}}</td>
+        <td>{{carDetail.colorName}}</td>
+        <td>{{carDetail.dailyPrice}} ₺</td>
         <td><button class="btn btn-outline-danger">Detayı Gör</button></td>
       </tr>
   
