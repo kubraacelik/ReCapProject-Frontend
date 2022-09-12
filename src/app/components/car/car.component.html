@@ -1,16 +1,17 @@
-<br>
+
+<!--<br>
 <table class="table">
     <thead class="table">
         <tr>
             <th class="text-center" colspan="7"><h4>ARABALAR</h4></th>
         </tr>
     </thead>
-    
+
     <thead class="table-dark">
       <tr class="text-center">
         <th><i class="fa-solid fa-car"></i></th>
-        <th scope="col">MARKA</th> 
-        <!-- <th scope="col">MODEL</th> -->
+        <th scope="col">MARKA</th>
+        <!-- <th scope="col">MODEL</th>
         <th scope="col">MODEL YILI</th>
         <th scope="col">RENK</th>
         <th scope="col">GÜNLÜK FİYAT</th>
@@ -20,13 +21,27 @@
     <tbody>
       <tr class ="text-center " *ngFor = "let carDetail of carDetails">
         <td><i class="fa-solid fa-car"></i></td>
-        <!-- <td>{{car.brandName}}</td>  -->
-        <td>{{carDetail.modelName}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{carDetail.brandName}}</td>
         <td>{{carDetail.modelYear}}</td>
         <td>{{carDetail.colorName}}</td>
         <td>{{carDetail.dailyPrice}} ₺</td>
         <td><button class="btn btn-outline-danger">Detayı Gör</button></td>
       </tr>
-  
+
     </tbody>
-</table>
+</table> -->
+<br/>
+<div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let carDetail of carDetails">
+  <img *ngIf="carDetail.imagePath" src="{{carDetail.imagePath}}" class="card-img-top carimg" alt="...">
+  <img *ngIf="!carDetail.imagePath" src="assets/default_image.png" class="card-img-top carimg" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{carDetail.modelName}}</h5>
+    <p class="card-text">
+      <b>Model Yılı : </b>{{carDetail.modelYear}}<br/>
+      <b>Renk : </b> {{carDetail.colorName}}<br/>
+      <b>Günlük Ücret : </b> {{carDetail.dailyPrice}}
+    </p>
+    <a href="#" class="btn btn-outline-danger">Detaylar</a>
+  </div>
+</div>
