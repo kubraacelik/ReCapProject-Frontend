@@ -15,6 +15,7 @@ export class CarComponent implements OnInit {
   cars : Car[] = [];
   carDetails: CarDetailDto[] = [];
   dataLoaded=false;
+  filterCar = '';
 
 
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
