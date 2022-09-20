@@ -32,12 +32,14 @@
     </tbody>
 </table> -->
 
-
-<div class="mb-3">
-  <label for="filterCar" class="form-label" style="text-align: center; width: 300px; color: white;">Model Ara</label>
-  <input type="text" [(ngModel)]="filterCar" class="form-control" id="filterCar" placeholder="model giriniz">
+<div class="content">
+  <form class="d-flex md-auto">
+    <input style="width: 91%;" class="form-control me-2"id="filterCar"  type="text" placeholder="model giriniz"
+      aria-label="Search All" [(ngModel)]="filterCar" [ngModelOptions]="{ standalone: true }" />
+  </form>
 </div>
 
+<br>
 
 <div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let carDetail of carDetails | carFilter:filterCar">
   <img *ngIf="carDetail.imagePath" src="{{carDetail.imagePath}}" class="card-img-top carimg" alt="...">
