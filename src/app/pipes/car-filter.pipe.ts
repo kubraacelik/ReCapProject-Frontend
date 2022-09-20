@@ -15,5 +15,6 @@ export class CarFilterPipe implements PipeTransform {
     c.modelName.toLocaleLowerCase().indexOf(filterCar) !== -1 ||
     c.description.toString().indexOf(filterCar) !== -1 ||
     c.dailyPrice.toString().indexOf(filterCar) !== -1 ) : value;
+    
   }
 }
