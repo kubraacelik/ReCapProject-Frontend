@@ -12,6 +12,5 @@ export class BrandFilterPipe implements PipeTransform {
 
     return filterBrand ? value.filter(
         (b : Brand) => b.brandName.toLocaleLowerCase().indexOf(filterBrand) !== -1) : value;
-        
   }
 }

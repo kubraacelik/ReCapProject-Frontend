@@ -12,6 +12,5 @@ export class ColorFilterPipe implements PipeTransform {
 
     return filterColor ? value.filter(
         (co: Color) => co.colorName.toLocaleLowerCase().indexOf(filterColor) !== -1) : value;
-        
   }
 }
