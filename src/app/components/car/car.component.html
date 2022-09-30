@@ -41,6 +41,39 @@
 
 <br>
 
+<!-- <option selected>FİLTRELEME</option>
+<select  [(ngModel)]="filterBrand" class="form-select">
+  <option  [ngValue]="car" *ngFor="let car of carDetails" >{{car.brandName}}</option>
+</select> -->
+
+<div class="row mb-3">
+  <div class="col-md-4">
+    <H5>MARKA</H5>
+      <select [(ngModel)]="brandFilter" class="form-select" aria-label="Default select example">
+      <!-- <option value=0>Select Brand</option> -->
+      <option *ngFor="let car of carDetails" [value]="car.brandId" [selected]="getSelectedBrand(car.brandId)">{{car.brandName}}</option>
+      
+    </select>
+
+  </div>
+
+  <div class="col-md-4">
+    <h5>RENK</h5>
+    <select  [(ngModel)]="filterColor" class="form-select" aria-label="Default select example">
+      <!-- <option value=0>Select Color</option> -->
+      <option *ngFor="let car of carDetails" [value]="car.colorId" [selected]="getSelectedColor(car.colorId)">{{car.colorName}}</option>
+      
+    </select>
+  </div>
+
+  <div class="col-md-3">
+  <button routerLink="/cars/color/{{filterColor}}/brand/{{brandFilter}}" class="btn btn-primary" type="button"  >Filter</button>
+  </div>
+
+</div>
+
+<br>
+
 <div class="card" style="width: 18rem; float:left; margin-right: 10px;" *ngFor="let carDetail of carDetails | carFilter:filterCar">
   <img *ngIf="carDetail.imagePath" src="{{carDetail.imagePath}}" class="card-img-top carimg" alt="...">
   <img *ngIf="!carDetail.imagePath" src="assets/default_image.png" class="card-img-top carimg" alt="...">
