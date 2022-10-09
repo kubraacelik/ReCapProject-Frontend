@@ -70,6 +70,14 @@ export class CarComponent implements OnInit {
     })
   }
 
+  getCarsDetailByBrandAndColorId(brandId:number, colorId:number) {
+    this.carService.getCarsDetailByBrandAndColorId(colorId, brandId).subscribe(response=>{
+      console.log(response)
+      this.carDetails=response.data;  
+    })
+
+  }
+
   getSelectedBrand(brandId: number){
     if(this.brandFilter==brandId) return true;
     else return false; 

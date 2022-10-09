@@ -64,10 +64,13 @@
       <option *ngFor="let car of carDetails" [value]="car.colorId" [selected]="getSelectedColor(car.colorId)">{{car.colorName}}</option>
       
     </select>
+    <br>
   </div>
 
+  
   <div class="col-md-3">
-  <button routerLink="/cars/color/{{filterColor}}/brand/{{brandFilter}}" class="btn btn-primary" type="button"  >Filter</button>
+    <br>
+  <button routerLink="/cars/color/{{filterColor}}/brand/{{brandFilter}}" class="btn btn-primary" type="button"  >Filtrele</button>
   </div>
 
 </div>
